@@ -17,6 +17,10 @@ select department, SUM(sales) as total_sales from orders group by department hav
 -- here * will count all the rows in the groups regardless of any column being null
 select role, count(*) as 'Total Count' from users where is_active = TRUE group by role
 
--- Q4How much money is successfully completed versus pending or failed
+-- Q4 How much money is successfully completed versus pending or failed
 
+select status, sum(amoount) as "Total Amount" from payments group by status
 
+-- Q5Which department has high volume of users
+
+select department_id, max(id) as "Total Users" from users group by department_id order by "Total Users" desc limit 1
